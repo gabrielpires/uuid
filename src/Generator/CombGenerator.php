@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the ramsey/uuid library
  *
@@ -27,7 +28,7 @@ use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
  */
 class CombGenerator implements RandomGeneratorInterface
 {
-    const TIMESTAMP_BYTES = 6;
+    private const TIMESTAMP_BYTES = 6;
 
     /**
      * @var RandomGeneratorInterface

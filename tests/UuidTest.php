@@ -1535,7 +1535,7 @@ class UuidTest extends TestCase
         $this->assertTrue(Uuid::isValid($argument));
 
         // reset the static validator
-        $factory->setValidator(new Validator);
+        $factory->setValidator(new Validator());
     }
 
     public function testUsingNilAsValidUuid(): void

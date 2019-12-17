@@ -1,4 +1,5 @@
 <?php
+
 namespace Ramsey\Uuid\Test\Encoder;
 
 use PHPUnit\Framework\MockObject\MockObject;

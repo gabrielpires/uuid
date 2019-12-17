@@ -35,14 +35,14 @@ use Ramsey\Uuid\Test\TestCase;
  */
 class SystemNodeProviderTest extends TestCase
 {
-    const MOCK_GLOB = 'glob';
-    const MOCK_CONSTANT = 'constant';
-    const MOCK_PASSTHRU = 'passthru';
-    const MOCK_FILE_GET_CONTENTS = 'file_get_contents';
-    const MOCK_INI_GET = 'ini_get';
-    const MOCK_IS_READABLE = 'is_readable';
+    private const MOCK_GLOB = 'glob';
+    private const MOCK_CONSTANT = 'constant';
+    private const MOCK_PASSTHRU = 'passthru';
+    private const MOCK_FILE_GET_CONTENTS = 'file_get_contents';
+    private const MOCK_INI_GET = 'ini_get';
+    private const MOCK_IS_READABLE = 'is_readable';
 
-    const PROVIDER_NAMESPACE = 'Ramsey\\Uuid\\Provider\\Node';
+    private const PROVIDER_NAMESPACE = 'Ramsey\\Uuid\\Provider\\Node';
 
     /**
      * @var FuncProxy[]

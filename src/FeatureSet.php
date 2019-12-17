@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the ramsey/uuid library
  *
@@ -152,7 +153,7 @@ class FeatureSet
         $this->nodeProvider = $this->buildNodeProvider();
         $this->randomGenerator = $this->buildRandomGenerator();
         $this->setTimeProvider(new SystemTimeProvider());
-        $this->validator = new Validator;
+        $this->validator = new Validator();
     }
 
     /**

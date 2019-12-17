@@ -3,6 +3,7 @@
 namespace Ramsey\Uuid\Test;
 
 use Ramsey\Uuid\Uuid;
+
 use function Ramsey\Uuid\v1;
 use function Ramsey\Uuid\v3;
 use function Ramsey\Uuid\v4;

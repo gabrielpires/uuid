@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the ramsey/uuid library
  *
@@ -47,80 +48,80 @@ class Uuid implements UuidInterface
      * When this namespace is specified, the name string is a fully-qualified domain name.
      * @link http://tools.ietf.org/html/rfc4122#appendix-C
      */
-    const NAMESPACE_DNS = '6ba7b810-9dad-11d1-80b4-00c04fd430c8';
+    public const NAMESPACE_DNS = '6ba7b810-9dad-11d1-80b4-00c04fd430c8';
 
     /**
      * When this namespace is specified, the name string is a URL.
      * @link http://tools.ietf.org/html/rfc4122#appendix-C
      */
-    const NAMESPACE_URL = '6ba7b811-9dad-11d1-80b4-00c04fd430c8';
+    public const NAMESPACE_URL = '6ba7b811-9dad-11d1-80b4-00c04fd430c8';
 
     /**
      * When this namespace is specified, the name string is an ISO OID.
      * @link http://tools.ietf.org/html/rfc4122#appendix-C
      */
-    const NAMESPACE_OID = '6ba7b812-9dad-11d1-80b4-00c04fd430c8';
+    public const NAMESPACE_OID = '6ba7b812-9dad-11d1-80b4-00c04fd430c8';
 
     /**
      * When this namespace is specified, the name string is an X.500 DN in DER or a text output format.
      * @link http://tools.ietf.org/html/rfc4122#appendix-C
      */
-    const NAMESPACE_X500 = '6ba7b814-9dad-11d1-80b4-00c04fd430c8';
+    public const NAMESPACE_X500 = '6ba7b814-9dad-11d1-80b4-00c04fd430c8';
 
     /**
      * The nil UUID is special form of UUID that is specified to have all 128 bits set to zero.
      * @link http://tools.ietf.org/html/rfc4122#section-4.1.7
      */
-    const NIL = '00000000-0000-0000-0000-000000000000';
+    public const NIL = '00000000-0000-0000-0000-000000000000';
 
     /**
      * Reserved for NCS compatibility.
      * @link http://tools.ietf.org/html/rfc4122#section-4.1.1
      */
-    const RESERVED_NCS = 0;
+    public const RESERVED_NCS = 0;
 
     /**
      * Specifies the UUID layout given in RFC 4122.
      * @link http://tools.ietf.org/html/rfc4122#section-4.1.1
      */
-    const RFC_4122 = 2;
+    public const RFC_4122 = 2;
 
     /**
      * Reserved for Microsoft compatibility.
      * @link http://tools.ietf.org/html/rfc4122#section-4.1.1
      */
-    const RESERVED_MICROSOFT = 6;
+    public const RESERVED_MICROSOFT = 6;
 
     /**
      * Reserved for future definition.
      * @link http://tools.ietf.org/html/rfc4122#section-4.1.1
      */
-    const RESERVED_FUTURE = 7;
+    public const RESERVED_FUTURE = 7;
 
     /**
      * Version 1 (time-based) UUID object constant identifier
      */
-    const UUID_TYPE_TIME = 1;
+    public const UUID_TYPE_TIME = 1;
 
     /**
      * Version 2 (identifier-based) UUID object constant identifier
      */
-    const UUID_TYPE_IDENTIFIER = 2;
+    public const UUID_TYPE_IDENTIFIER = 2;
 
     /**
      * Version 3 (name-based and hashed with MD5) UUID object constant identifier
      */
-    const UUID_TYPE_HASH_MD5 = 3;
+    public const UUID_TYPE_HASH_MD5 = 3;
 
     /**
      * Version 4 (random) UUID object constant identifier
      */
-    const UUID_TYPE_RANDOM = 4;
+    public const UUID_TYPE_RANDOM = 4;
 
     /**
      * Version 5 (name-based and hashed with SHA1) UUID object constant identifier
      */
-    const UUID_TYPE_HASH_SHA1 = 5;
+    public const UUID_TYPE_HASH_SHA1 = 5;
 
     /**
      * The factory to use when creating UUIDs.

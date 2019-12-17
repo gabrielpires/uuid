@@ -16,7 +16,7 @@ class PeclUuidTimeGeneratorTest extends PeclUuidTestCase
         $create = AspectMock::func('Ramsey\Uuid\Generator', 'uuid_create', $this->uuidString);
         $parse = AspectMock::func('Ramsey\Uuid\Generator', 'uuid_parse', $this->uuidBinary);
 
-        $generator = new PeclUuidTimeGenerator;
+        $generator = new PeclUuidTimeGenerator();
         $uuid = $generator->generate();
 
         $this->assertEquals($this->uuidBinary, $uuid);
@@ -32,7 +32,7 @@ class PeclUuidTimeGeneratorTest extends PeclUuidTestCase
     {
         $create = AspectMock::func('Ramsey\Uuid\Generator', 'uuid_create', $this->uuidString);
         $parse = AspectMock::func('Ramsey\Uuid\Generator', 'uuid_parse', $this->uuidBinary);
-        $generator = new PeclUuidTimeGenerator;
+        $generator = new PeclUuidTimeGenerator();
         $uuid = $generator->generate();
 
         $this->assertEquals($this->uuidBinary, $uuid);

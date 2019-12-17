@@ -68,7 +68,8 @@
     },
     "scripts": {
         "lint": "parallel-lint src tests",
-        "phpcs": "phpcs src tests --standard=psr2 -sp --colors",
+        "phpcbf": "phpcbf --standard=psr12 -vpw src tests",
+        "phpcs": "phpcs --standard=psr12 -spw --colors src tests",
         "phpstan": [
             "phpstan analyse -c phpstan.neon src --level max --no-progress",
             "phpstan analyse -c phpstan-tests.neon tests --level max --no-progress"

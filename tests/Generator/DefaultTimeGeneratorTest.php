@@ -132,7 +132,7 @@ class DefaultTimeGeneratorTest extends TestCase
         $this->timeConverter->method('calculateTime')
             ->with($this->currentTime['sec'], $this->currentTime['usec'])
             ->willReturn($this->calculatedTime);
-        $binaryUtils = Mockery::mock('alias:'.BinaryUtils::class);
+        $binaryUtils = Mockery::mock('alias:' . BinaryUtils::class);
         $binaryUtils->shouldReceive('applyVersion')
             ->with($this->calculatedTime['hi'], 1)
             ->andReturn(971);
@@ -158,7 +158,7 @@ class DefaultTimeGeneratorTest extends TestCase
     {
         $this->timeProvider->method('currentTime')->willReturn($this->currentTime);
         $this->timeConverter->method('calculateTime')->willReturn($this->calculatedTime);
-        $binaryUtils = Mockery::mock('alias:'.BinaryUtils::class);
+        $binaryUtils = Mockery::mock('alias:' . BinaryUtils::class);
         $binaryUtils->shouldReceive('applyVersion')->andReturn(971);
         $binaryUtils->shouldReceive('applyVariant')->andReturn(143);
 

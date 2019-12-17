@@ -1,4 +1,5 @@
 <?php
+
 namespace Ramsey\Uuid\Test;
 
 use AspectMock\Test as AspectMock;
