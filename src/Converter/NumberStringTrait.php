@@ -8,9 +8,6 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Converter;
@@ -30,6 +27,8 @@ trait NumberStringTrait
      * @param string $integer The string integer value to check
      * @param string $param The name of the parameter being checked
      * @return bool
+     * @throws InvalidArgumentException if the string $integer does not contain
+     *     only digits for a positive or negative integer
      */
     private function checkIntegerString(string $integer, string $param): bool
     {
@@ -55,6 +54,8 @@ trait NumberStringTrait
      * @param string $hex The hexadecimal string value to check
      * @param string $param The name of the parameter being checked
      * @return bool
+     * @throws InvalidArgumentException if the string $hex does not contain only
+     *     hexadecimal characters
      */
     private function checkHexadecimalString(string $hex, string $param): bool
     {

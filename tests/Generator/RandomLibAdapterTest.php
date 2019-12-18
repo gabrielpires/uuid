@@ -46,7 +46,8 @@ class RandomLibAdapterTest extends TestCase
             ->getMock();
         $generator->expects($this->once())
             ->method('generate')
-            ->with($length);
+            ->with($length)
+            ->willReturn('foo');
 
         $adapter = new RandomLibAdapter($generator);
         $adapter->generate($length);

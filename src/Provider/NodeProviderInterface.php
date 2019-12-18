@@ -8,18 +8,15 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Provider;
 
-use Exception;
-
 /**
- * NodeProviderInterface provides functionality to get the node ID (or host ID
- * in the form of the system's MAC address) from a specific type of node provider
+ * A node provider retrieves the system node ID
+ *
+ * The system node ID, or host ID, is often the same as the MAC address for a
+ * network interface on the host.
  */
 interface NodeProviderInterface
 {
@@ -27,7 +24,6 @@ interface NodeProviderInterface
      * Returns the system node ID
      *
      * @return string|null|false System node ID as a hexadecimal string
-     * @throws Exception if it was not possible to gather sufficient entropy
      */
     public function getNode();
 }

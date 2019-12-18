@@ -8,20 +8,15 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Provider\Node;
 
-use Exception;
 use Ramsey\Uuid\Provider\NodeProviderInterface;
 
 /**
- * FallbackNodeProvider attempts to gain the system host ID from an array of
- * providers, falling back to the next in line in the event a host ID can not be
- * obtained
+ * FallbackNodeProvider retrieves the system node ID by stepping through a list
+ * of providers until a node ID can be obtained
  */
 class FallbackNodeProvider implements NodeProviderInterface
 {
@@ -31,7 +26,7 @@ class FallbackNodeProvider implements NodeProviderInterface
     private $nodeProviders;
 
     /**
-     * Constructs a `FallbackNodeProvider` using an array of node providers
+     * Constructs a FallbackNodeProvider
      *
      * @param NodeProviderInterface[] $providers Array of node providers
      */
@@ -41,13 +36,11 @@ class FallbackNodeProvider implements NodeProviderInterface
     }
 
     /**
-     * Returns the system node ID by iterating over an array of node providers
-     * and returning the first non-empty value found
+     * Returns the system node ID
      *
-     * @return string|null System node ID as a hexadecimal string
-     * @throws Exception
+     * @return string|null|false System node ID as a hexadecimal string
      */
-    public function getNode(): ?string
+    public function getNode()
     {
         foreach ($this->nodeProviders as $provider) {
             if ($node = $provider->getNode()) {

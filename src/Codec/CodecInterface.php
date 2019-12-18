@@ -8,24 +8,19 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Codec;
 
-use InvalidArgumentException;
-use Ramsey\Uuid\Exception\InvalidUuidStringException;
 use Ramsey\Uuid\UuidInterface;
 
 /**
- * CodecInterface represents a UUID coder-decoder
+ * A codec encodes and decodes a UUID according to defined rules
  */
 interface CodecInterface
 {
     /**
-     * Encodes a UuidInterface as a string representation of a UUID
+     * Returns a hexadecimal string representation of a UuidInterface
      *
      * @param UuidInterface $uuid
      * @return string Hexadecimal string representation of a UUID
@@ -33,7 +28,7 @@ interface CodecInterface
     public function encode(UuidInterface $uuid): string;
 
     /**
-     * Encodes a UuidInterface as a binary representation of a UUID
+     * Returns a binary string representation of a UuidInterface
      *
      * @param UuidInterface $uuid
      * @return string Binary string representation of a UUID
@@ -41,21 +36,18 @@ interface CodecInterface
     public function encodeBinary(UuidInterface $uuid): string;
 
     /**
-     * Decodes a string representation of a UUID into a UuidInterface object instance
+     * Returns a UuidInterface derived from a hexadecimal string representation
      *
      * @param string $encodedUuid
      * @return UuidInterface
-     * @throws InvalidUuidStringException
      */
     public function decode(string $encodedUuid): UuidInterface;
 
     /**
-     * Decodes a binary representation of a UUID into a UuidInterface object instance
+     * Returns a UuidInterface derived from a binary string representation
      *
      * @param string $bytes
      * @return UuidInterface
-     * @throws InvalidUuidStringException
-     * @throws InvalidArgumentException if string has not 16 characters
      */
     public function decodeBytes(string $bytes): UuidInterface;
 }

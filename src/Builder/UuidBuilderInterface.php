@@ -8,9 +8,6 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Builder;
@@ -19,12 +16,12 @@ use Ramsey\Uuid\Codec\CodecInterface;
 use Ramsey\Uuid\UuidInterface;
 
 /**
- * UuidBuilderInterface builds instances UuidInterface
+ * A UUID builder builds instances of UuidInterface
  */
 interface UuidBuilderInterface
 {
     /**
-     * Builds an instance of a UuidInterface
+     * Builds and returns a UuidInterface
      *
      * @param CodecInterface $codec The codec to use for building this UuidInterface instance
      * @param array $fields An array of fields from which to construct a UuidInterface instance;

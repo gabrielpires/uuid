@@ -8,9 +8,6 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Provider\Time;
@@ -18,7 +15,7 @@ namespace Ramsey\Uuid\Provider\Time;
 use Ramsey\Uuid\Provider\TimeProviderInterface;
 
 /**
- * SystemTimeProvider uses built-in PHP functions to provide the time
+ * SystemTimeProvider retrieves the current time using built-in PHP functions
  */
 class SystemTimeProvider implements TimeProviderInterface
 {

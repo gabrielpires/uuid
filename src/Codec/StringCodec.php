@@ -8,9 +8,6 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Codec;
@@ -34,9 +31,9 @@ class StringCodec implements CodecInterface
     private $builder;
 
     /**
-     * Constructs a StringCodec for use encoding and decoding UUIDs
+     * Constructs a StringCodec
      *
-     * @param UuidBuilderInterface $builder The UUID builder to use when encoding UUIDs
+     * @param UuidBuilderInterface $builder The builder to use when encoding UUIDs
      */
     public function __construct(UuidBuilderInterface $builder)
     {
@@ -44,7 +41,7 @@ class StringCodec implements CodecInterface
     }
 
     /**
-     * Encodes a UuidInterface as a string representation of a UUID
+     * Returns a hexadecimal string representation of a UUID
      *
      * @param UuidInterface $uuid
      * @return string Hexadecimal string representation of a UUID
@@ -60,7 +57,7 @@ class StringCodec implements CodecInterface
     }
 
     /**
-     * Encodes a UuidInterface as a binary representation of a UUID
+     * Returns a binary string representation of a UUID
      *
      * @param UuidInterface $uuid
      * @return string Binary string representation of a UUID
@@ -71,7 +68,7 @@ class StringCodec implements CodecInterface
     }
 
     /**
-     * Decodes a string representation of a UUID into a UuidInterface object instance
+     * Returns a UuidInterface derived from a hexadecimal string representation
      *
      * @param string $encodedUuid
      * @return UuidInterface
@@ -86,16 +83,18 @@ class StringCodec implements CodecInterface
     }
 
     /**
-     * Decodes a binary representation of a UUID into a UuidInterface object instance
+     * Returns a UuidInterface derived from a binary string representation
      *
      * @param string $bytes
      * @return UuidInterface
-     * @throws InvalidArgumentException if string has not 16 characters
+     * @throws InvalidArgumentException if $bytes is an invalid length
      */
     public function decodeBytes(string $bytes): UuidInterface
     {
         if (strlen($bytes) !== 16) {
-            throw new InvalidArgumentException('$bytes string should contain 16 characters.');
+            throw new InvalidArgumentException(
+                '$bytes string should contain 16 characters.'
+            );
         }
 
         $hexUuid = unpack('H*', $bytes);
@@ -144,7 +143,9 @@ class StringCodec implements CodecInterface
         $nameParsed = implode('-', $components);
 
         if (!Uuid::isValid($nameParsed)) {
-            throw new InvalidUuidStringException('Invalid UUID string: ' . $encodedUuid);
+            throw new InvalidUuidStringException(
+                'Invalid UUID string: ' . $encodedUuid
+            );
         }
 
         return $components;
@@ -153,9 +154,9 @@ class StringCodec implements CodecInterface
     /**
      * Returns the fields that make up this UUID
      *
-     * @see \Ramsey\Uuid\UuidInterface::getFieldsHex()
      * @param array $components
      * @return array
+     * @see \Ramsey\Uuid\UuidInterface::getFieldsHex()
      */
     protected function getFields(array $components)
     {

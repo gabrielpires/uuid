@@ -8,26 +8,25 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Generator;
 
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+
 /**
- * PeclUuidRandomGenerator provides functionality to generate strings of random
- * binary data using the PECL UUID PHP extension
+ * PeclUuidRandomGenerator generates strings of random binary data using ext-uuid
  *
- * @link https://pecl.php.net/package/uuid
+ * @link https://pecl.php.net/package/uuid ext-uuid
  */
 class PeclUuidRandomGenerator implements RandomGeneratorInterface
 {
     /**
-     * Generates a string of random binary data of the specified length
+     * Generates a string of randomized binary data
      *
      * @param int $length The number of bytes of random binary data to generate
      * @return string A binary string
+     * @throws UnsatisfiedDependencyException if the chosen generator is not present
      */
     public function generate(int $length): string
     {

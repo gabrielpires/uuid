@@ -8,9 +8,6 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Generator;
@@ -20,7 +17,8 @@ use Ramsey\Uuid\Provider\NodeProviderInterface;
 use Ramsey\Uuid\Provider\TimeProviderInterface;
 
 /**
- * A factory for retrieving a time generator, based on the environment
+ * TimeGeneratorFactory retrieves a default time generator, based on the
+ * environment
  */
 class TimeGeneratorFactory
 {
@@ -40,7 +38,7 @@ class TimeGeneratorFactory
     private $timeProvider;
 
     /**
-     * Constructs a `TimeGeneratorFactory` using a node provider, time converter,
+     * Constructs a TimeGeneratorFactory using a node provider, time converter,
      * and time provider
      *
      * @param NodeProviderInterface $nodeProvider

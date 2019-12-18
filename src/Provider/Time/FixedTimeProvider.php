@@ -8,9 +8,6 @@
  *
  * @copyright Copyright (c) Ben Ramsey <ben@benramsey.com>
  * @license http://opensource.org/licenses/MIT MIT
- * @link https://benramsey.com/projects/ramsey-uuid/ Documentation
- * @link https://packagist.org/packages/ramsey/uuid Packagist
- * @link https://github.com/ramsey/uuid GitHub
  */
 
 namespace Ramsey\Uuid\Provider\Time;
@@ -19,10 +16,10 @@ use InvalidArgumentException;
 use Ramsey\Uuid\Provider\TimeProviderInterface;
 
 /**
- * FixedTimeProvider uses an previously-generated timestamp to provide the time
+ * FixedTimeProvider uses an known timestamp to provide the time
  *
- * This provider allows the use of a previously-generated timestamp, such as one
- * stored in a database, when creating version 1 UUIDs.
+ * This provider allows the use of a previously-generated, or known, timestamp
+ * when generating time-based UUIDs.
  */
 class FixedTimeProvider implements TimeProviderInterface
 {
@@ -32,10 +29,12 @@ class FixedTimeProvider implements TimeProviderInterface
     private $fixedTime;
 
     /**
-     * Constructs a `FixedTimeProvider` using the provided `$timestamp`
+     * Constructs a FixedTimeProvider
      *
-     * @param int[] $timestamp Array containing `sec` and `usec` components of a timestamp
-     * @throws InvalidArgumentException if the `$timestamp` does not contain `sec` or `usec` components
+     * @param int[] $timestamp Array containing `sec` and `usec` components of
+     *     a timestamp
+     * @throws InvalidArgumentException if the `$timestamp` does not contain
+     *     `sec` or `usec` components
      */
     public function __construct(array $timestamp)
     {
@@ -52,7 +51,7 @@ class FixedTimeProvider implements TimeProviderInterface
      * @param int $value The `usec` value to set
      * @return void
      */
-    public function setUsec(int $value)
+    public function setUsec(int $value): void
     {
         $this->fixedTime['usec'] = $value;
     }
@@ -63,7 +62,7 @@ class FixedTimeProvider implements TimeProviderInterface
      * @param int $value The `sec` value to set
      * @return void
      */
-    public function setSec(int $value)
+    public function setSec(int $value): void
     {
         $this->fixedTime['sec'] = $value;
     }
